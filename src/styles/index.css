@@ -1,0 +1,26 @@
+@tailwind base;
+
+span {
+  @apply font-sans text-gray-700;
+}
+
+.btn {
+  @apply bg-white text-lg text-gray-800 m-5 font-medium px-4 py-2 border rounded shadow;
+}
+.btn-green {
+  @apply border-green-400;
+}
+.btn:hover {
+  @apply bg-gray-100;
+}
+
+.form {
+  @apply shadow appearance-none border rounded py-3 px-3 leading-tight;
+}
+.form:focus {
+  @apply outline-none shadow-outline;
+}
+
+@tailwind components;
+
+@tailwind utilities;
