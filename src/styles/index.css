@@ -1,11 +1,12 @@
 @tailwind base;
 
-span {
+span,
+button {
   @apply font-sans text-gray-700;
 }
 
 .btn {
-  @apply bg-white text-lg text-gray-800 m-5 font-medium px-4 py-2 border rounded shadow;
+  @apply bg-white text-lg font-sans text-gray-800 m-5 font-medium px-4 py-2 border rounded shadow;
 }
 .btn-green {
   @apply border-green-400;

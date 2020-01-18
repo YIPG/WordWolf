@@ -11,6 +11,11 @@ const NotFound: React.FC = () => {
         </a>
         へお戻りください。
       </span>
+      <img
+        alt="dogeza"
+        className="pt-6 w-48 object-contain"
+        src="https://2.bp.blogspot.com/-HUTXJXs7Va4/WZVg1CzrH8I/AAAAAAABGFM/ebgsMcAigKIg69dW2U7GFIPJ91z116ZsACLcBGAs/s800/dogeza_businessman.png"
+      />
     </div>
   );
 };

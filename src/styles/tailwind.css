@@ -599,14 +599,16 @@ video {
   height: auto;
 }
 
-span {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+span,
+button {
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #4a5568;
 }
 
 .btn {
   background-color: #fff;
   font-size: 1.125rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #2d3748;
   margin: 1.25rem;
   font-weight: 500;
@@ -3693,7 +3695,7 @@ span {
 }
 
 .font-sans {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .font-serif {
@@ -5138,6 +5140,46 @@ span {
 
 .min-h-0 {
   min-height: 0;
+}
+
+.min-h-xs {
+  min-height: 0.75rem;
+}
+
+.min-h-sm {
+  min-height: 0.875rem;
+}
+
+.min-h-base {
+  min-height: 1rem;
+}
+
+.min-h-lg {
+  min-height: 1.125rem;
+}
+
+.min-h-xl {
+  min-height: 1.25rem;
+}
+
+.min-h-2xl {
+  min-height: 1.5rem;
+}
+
+.min-h-3xl {
+  min-height: 1.875rem;
+}
+
+.min-h-4xl {
+  min-height: 2.25rem;
+}
+
+.min-h-5xl {
+  min-height: 3rem;
+}
+
+.min-h-6xl {
+  min-height: 4rem;
 }
 
 .min-h-full {
@@ -14454,7 +14496,7 @@ span {
   }
 
   .sm\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .sm\:font-serif {
@@ -15899,6 +15941,46 @@ span {
 
   .sm\:min-h-0 {
     min-height: 0;
+  }
+
+  .sm\:min-h-xs {
+    min-height: 0.75rem;
+  }
+
+  .sm\:min-h-sm {
+    min-height: 0.875rem;
+  }
+
+  .sm\:min-h-base {
+    min-height: 1rem;
+  }
+
+  .sm\:min-h-lg {
+    min-height: 1.125rem;
+  }
+
+  .sm\:min-h-xl {
+    min-height: 1.25rem;
+  }
+
+  .sm\:min-h-2xl {
+    min-height: 1.5rem;
+  }
+
+  .sm\:min-h-3xl {
+    min-height: 1.875rem;
+  }
+
+  .sm\:min-h-4xl {
+    min-height: 2.25rem;
+  }
+
+  .sm\:min-h-5xl {
+    min-height: 3rem;
+  }
+
+  .sm\:min-h-6xl {
+    min-height: 4rem;
   }
 
   .sm\:min-h-full {
@@ -25216,7 +25298,7 @@ span {
   }
 
   .md\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .md\:font-serif {
@@ -26661,6 +26743,46 @@ span {
 
   .md\:min-h-0 {
     min-height: 0;
+  }
+
+  .md\:min-h-xs {
+    min-height: 0.75rem;
+  }
+
+  .md\:min-h-sm {
+    min-height: 0.875rem;
+  }
+
+  .md\:min-h-base {
+    min-height: 1rem;
+  }
+
+  .md\:min-h-lg {
+    min-height: 1.125rem;
+  }
+
+  .md\:min-h-xl {
+    min-height: 1.25rem;
+  }
+
+  .md\:min-h-2xl {
+    min-height: 1.5rem;
+  }
+
+  .md\:min-h-3xl {
+    min-height: 1.875rem;
+  }
+
+  .md\:min-h-4xl {
+    min-height: 2.25rem;
+  }
+
+  .md\:min-h-5xl {
+    min-height: 3rem;
+  }
+
+  .md\:min-h-6xl {
+    min-height: 4rem;
   }
 
   .md\:min-h-full {
@@ -35978,7 +36100,7 @@ span {
   }
 
   .lg\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .lg\:font-serif {
@@ -37423,6 +37545,46 @@ span {
 
   .lg\:min-h-0 {
     min-height: 0;
+  }
+
+  .lg\:min-h-xs {
+    min-height: 0.75rem;
+  }
+
+  .lg\:min-h-sm {
+    min-height: 0.875rem;
+  }
+
+  .lg\:min-h-base {
+    min-height: 1rem;
+  }
+
+  .lg\:min-h-lg {
+    min-height: 1.125rem;
+  }
+
+  .lg\:min-h-xl {
+    min-height: 1.25rem;
+  }
+
+  .lg\:min-h-2xl {
+    min-height: 1.5rem;
+  }
+
+  .lg\:min-h-3xl {
+    min-height: 1.875rem;
+  }
+
+  .lg\:min-h-4xl {
+    min-height: 2.25rem;
+  }
+
+  .lg\:min-h-5xl {
+    min-height: 3rem;
+  }
+
+  .lg\:min-h-6xl {
+    min-height: 4rem;
   }
 
   .lg\:min-h-full {
@@ -46740,7 +46902,7 @@ span {
   }
 
   .xl\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .xl\:font-serif {
@@ -48185,6 +48347,46 @@ span {
 
   .xl\:min-h-0 {
     min-height: 0;
+  }
+
+  .xl\:min-h-xs {
+    min-height: 0.75rem;
+  }
+
+  .xl\:min-h-sm {
+    min-height: 0.875rem;
+  }
+
+  .xl\:min-h-base {
+    min-height: 1rem;
+  }
+
+  .xl\:min-h-lg {
+    min-height: 1.125rem;
+  }
+
+  .xl\:min-h-xl {
+    min-height: 1.25rem;
+  }
+
+  .xl\:min-h-2xl {
+    min-height: 1.5rem;
+  }
+
+  .xl\:min-h-3xl {
+    min-height: 1.875rem;
+  }
+
+  .xl\:min-h-4xl {
+    min-height: 2.25rem;
+  }
+
+  .xl\:min-h-5xl {
+    min-height: 3rem;
+  }
+
+  .xl\:min-h-6xl {
+    min-height: 4rem;
   }
 
   .xl\:min-h-full {

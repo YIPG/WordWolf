@@ -5,29 +5,29 @@ import {
   faCaretLeft,
   faPlusCircle
 } from "@fortawesome/free-solid-svg-icons";
-import { useCtx } from "../../logic/NameList";
+import { useNameListCtx } from "../../logic/NameList";
 import { useForm } from "react-hook-form";
 import NameItem from "./NameItem";
-import { useLocation } from "wouter";
+import { useHistory } from "react-router-dom";
 
 const PeopleSetting: React.FC = () => {
-  const {
-    nameList,
-    increment,
-    decrement,
-    removeItem,
-    replaceNameList
-  } = useCtx();
+  const { nameList, increment, decrement, replaceNameList } = useNameListCtx();
 
-  const [location, setLocation] = useLocation();
+  const history = useHistory();
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data: { [key: number]: string }) => {
     replaceNameList(data);
-    setLocation("/setting/game");
+    history.push("/setting/game");
     return;
   };
+
+  // const onDeleteEl = (index: number) => {
+  //   const values = getValues();
+  //   replaceNameList(values);
+  //   removeItem(index);
+  // };
 
   const num = nameList.length;
   return (
@@ -61,7 +61,7 @@ const PeopleSetting: React.FC = () => {
                   register={register}
                   index={index}
                   name={name}
-                  removeItem={removeItem}
+                  // onDeleteEl={onDeleteEl}
                 />
               );
             })}

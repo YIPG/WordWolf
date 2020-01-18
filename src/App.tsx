@@ -1,22 +1,8 @@
 import React from "react";
-import { useLocation } from "wouter";
-
-/* 
-TODO: トランジションをにアニメーションをつける。
-Example
-import { useRoute } from "wouter";
-import { Transition } from "react-transition-group";
-
-const AnimatedRoute = () => {
-  // `match` is boolean
-  const [match, params] = useRoute("/users/:id");
-
-  return <Transition in={match}>Hi, this is: {params.id}</Transition>;
-};
-*/
+import { useHistory } from "react-router-dom";
 
 const App: React.FC = () => {
-  const [location, setLocation] = useLocation();
+  let history = useHistory();
 
   return (
     <div className="w-screen h-screen bg-gray-100">
@@ -25,12 +11,11 @@ const App: React.FC = () => {
           ワードウルフ
         </span>
         <button
-          onClick={() => setLocation("/setting/people")}
+          onClick={() => history.push("/setting/people")}
           className="btn btn-green"
         >
           はじめる
         </button>
-        <button className="btn btn-green">遊び方</button>
       </div>
     </div>
   );

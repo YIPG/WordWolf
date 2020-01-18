@@ -13,17 +13,19 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.3",
     "autoprefixer": "^9.7.3",
+    "localforage": "^1.7.3",
     "postcss-cli": "^6.1.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-hook-form": "^4.4.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
-    "typescript": "~3.7.2",
-    "wouter": "^2.4.0"
+    "typescript": "~3.7.2"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
     "start": "npm run build:style && react-scripts start",
     "build": "react-scripts build",
@@ -46,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "source-map-explorer": "^2.2.2",
     "tailwindcss": "^1.1.4"
   }
 }
