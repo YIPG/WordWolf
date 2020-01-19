@@ -1,5 +1,6 @@
 @tailwind base;
 
+div,
 span,
 button {
   @apply font-sans text-gray-700;

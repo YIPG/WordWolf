@@ -12,9 +12,15 @@ const App: React.FC = () => {
         </span>
         <button
           onClick={() => history.push("/setting/people")}
-          className="btn btn-green"
+          className="btn btn-green w-2/3"
         >
           はじめる
+        </button>
+        <button
+          onClick={() => history.push("/privacy-policy")}
+          className="btn px-2 w-2/3"
+        >
+          プライバシーポリシー
         </button>
       </div>
     </div>
