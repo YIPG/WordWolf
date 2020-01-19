@@ -26,8 +26,10 @@
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
-    "start": "npm run build:style && react-scripts start",
+    "build:style": "postcss src/styles/index.css -o src/styles/tailwind.css",
+    "prebuild": "NODE_ENV=production yarn build:style",
+    "prestart": "yarn build:style",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.3",
     "source-map-explorer": "^2.2.2",
     "tailwindcss": "^1.1.4"
   }
