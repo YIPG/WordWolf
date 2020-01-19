@@ -41,6 +41,7 @@ const GameVoting = () => {
             >
               <input
                 type="radio"
+                aria-label={`player${index}`}
                 name={player.name}
                 value={index}
                 checked={index === selectedIndex}

@@ -16,6 +16,7 @@ const NameItem: React.FC<ItemProps> = props => {
       <input
         className="flex-grow form my-1"
         type="search"
+        aria-label={`player${index + 1}`}
         name={String(index)}
         placeholder={placeHoldder}
         ref={register}
