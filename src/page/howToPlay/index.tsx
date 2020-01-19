@@ -21,7 +21,12 @@ const HowToPlay = () => {
           例えば、下のイラストでは、多くの人が「りんご」というお題を与えられている中で、「なし」というお題を与えられた少数派がワードウルフ、ということになります。
         </div>
         <br />
-        <img className="" alt="how-to-play" src="/wordwolf-explanation.jpg" />
+
+        <img
+          className="w-full sm:w-1/2"
+          alt="how-to-play"
+          src="/wordwolf-explanation.jpg"
+        />
 
         <br />
         <div>
