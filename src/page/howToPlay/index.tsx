@@ -22,12 +22,13 @@ const HowToPlay = () => {
         </div>
         <br />
 
-        <img
-          className="w-full sm:w-1/2"
-          alt="how-to-play"
-          src="/wordwolf-explanation.jpg"
-        />
-
+        <div className="flex justify-center">
+          <img
+            className="w-full sm:w-1/2"
+            alt="how-to-play"
+            src="/wordwolf-explanation.jpg"
+          />
+        </div>
         <br />
         <div>
           ちなみに多数派は『市民』、少数派は『ワードウルフ』と呼びます。 <br />
