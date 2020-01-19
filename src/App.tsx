@@ -17,6 +17,12 @@ const App: React.FC = () => {
           はじめる
         </button>
         <button
+          onClick={() => history.push("/how-to-play")}
+          className="btn w-2/3"
+        >
+          遊び方
+        </button>
+        <button
           onClick={() => history.push("/privacy-policy")}
           className="btn px-2 w-2/3"
         >

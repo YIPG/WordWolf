@@ -8,6 +8,7 @@ import GameTimer from "./page/gameTimer";
 import GameVoting from "./page/gameVoting";
 import GameResult from "./page/gameResult";
 import PrivacyPolicy from "./page/privacyPolicy";
+import HowToPlay from "./page/howToPlay";
 
 import { useNameList, NameListProvider } from "./logic/NameList";
 import { useGameSetting, GameSettingProvider } from "./logic/GameSetting";
@@ -30,6 +31,7 @@ const Root: React.FC = () => {
             <Route path="/game/vote" component={GameVoting} />
             <Route path="/game/result" component={GameResult} />
             <Route path="/privacy-policy" component={PrivacyPolicy} />
+            <Route path="/how-to-play" component={HowToPlay} />
             <Route component={NotFound} />
           </Switch>
         </Router>

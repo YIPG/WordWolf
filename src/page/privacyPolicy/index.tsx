@@ -5,11 +5,11 @@ const PrivacyPolicy = () => {
   const history = useHistory();
   return (
     <div className="flex flex-col items-center pb-20">
-      <span className="text-3xl text-green-700 font-medium pt-24">
+      <span className="text-3xl text-green-500 font-semibold pt-24">
         プライバシーポリシー
       </span>
-      <div className="pt-10  w-4/5 font-thin">
-        <div className="text-lg text-green-600 ">
+      <div className="pt-10  w-4/5">
+        <div className="text-lg font-medium text-green-600 ">
           当サイトに掲載される広告について
         </div>
         <br />
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
           をクリックしてください。
         </div>
         <br />
-        <div className="text-lg text-green-600 ">
+        <div className="text-lg font-medium  text-green-600 ">
           当サイトが使用しているアクセス解析ツールについて
         </div>
         <br />
