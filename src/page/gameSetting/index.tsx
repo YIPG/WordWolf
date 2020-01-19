@@ -37,9 +37,9 @@ const GameSetting: React.FC = () => {
         ゲーム設定
       </span>
       <span className=" text-lg font-semibold pt-6 pb-3">人数構成</span>
-      <div className="w-screen flex flex-row flex-wrap justify-around">
-        <div className="w-1/2  flex flex-col items-center">
-          <span className="font-medium">市民(多数派)</span>
+      <div className="w-screen flex flex-row flex-wrap">
+        <div className="w-1/2 flex flex-col items-center">
+          <span className="font-medium ml-auto pr-12">市民(多数派)</span>
           <div className="w-full flex flex-row items-center justify-end pr-3 -mt-1">
             <span className="text-3xl font-bold">
               {nameList.length - wolfNum}
@@ -53,7 +53,7 @@ const GameSetting: React.FC = () => {
           </div>
         </div>
         <div className="w-1/2  flex flex-col items-center">
-          <span className="font-medium">狼(少数派)</span>
+          <span className="font-medium mr-auto pl-12">狼(少数派)</span>
           <div className="w-full flex flex-row items-center justify-start pl-3 -mt-1">
             <span
               className="text-5xl px-6"
