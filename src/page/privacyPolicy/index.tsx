@@ -67,7 +67,7 @@ const PrivacyPolicy = () => {
           をクリックしてください。
         </div>
       </div>
-      <button className="btn mt-8" onClick={() => history.push("/")}>
+      <button className="btn mt-8" onClick={() => history.goBack()}>
         TOPへ戻る
       </button>
     </div>

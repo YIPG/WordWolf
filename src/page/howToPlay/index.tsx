@@ -56,7 +56,7 @@ const HowToPlay = () => {
           となります。
         </div>
       </div>
-      <button onClick={() => history.push("/")} className="btn mt-12">
+      <button onClick={() => history.goBack()} className="btn mt-12">
         TOPへ
       </button>
     </div>
