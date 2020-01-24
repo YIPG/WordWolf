@@ -13,7 +13,8 @@ const GameSetting: React.FC = () => {
     setTalkTime,
     setWolf,
     setWord,
-    resetPlayers
+    resetPlayers,
+    setSelectedCategory
   } = useGameSettingCtx();
 
   useEffect(() => {
@@ -29,6 +30,15 @@ const GameSetting: React.FC = () => {
     setWolf(wolfNum);
     setWord();
     history.push("/game/word");
+  };
+
+  const categoryTranslate = (category: string) => {
+    if (category === "all") return "すべて";
+    if (category === "love") return "恋愛";
+    if (category === "life") return "生活";
+    if (category === "child") return "子供向け";
+    if (category === "play") return "遊び";
+    return "エラー";
   };
 
   return (
@@ -66,6 +76,18 @@ const GameSetting: React.FC = () => {
             <span className="text-3xl font-bold">{wolfNum}</span>
           </div>
         </div>
+      </div>
+      <span className=" text-lg font-semibold pt-4">お題カテゴリー</span>
+      <div className="flex flex-row justify-center items-center">
+        <span className="text-5xl" onClick={() => setSelectedCategory("down")}>
+          <FontAwesomeIcon icon={faCaretLeft} />
+        </span>
+        <span className="text-3xl font-bold px-16">
+          {categoryTranslate(gameSetting.selectedCategoryName)}
+        </span>
+        <span className="text-5xl" onClick={() => setSelectedCategory("up")}>
+          <FontAwesomeIcon icon={faCaretRight} />
+        </span>
       </div>
       <span className=" text-lg font-semibold pt-6">トーク時間 (分)</span>
       <div className="flex flex-row justify-center items-center">

@@ -3,11 +3,13 @@ import { createCtx } from "../context";
 import { getRand } from "./utils";
 import localForage from "localforage";
 
-import { words } from "../assets/words";
+import { words, wordCategory } from "../assets/words";
 
 type GameSettingState = {
   talkTime: number;
   selectedPlayer: number;
+  selectedCategoryIndex: number;
+  selectedCategoryName: string;
   player: {
     name: string;
     word: string;
@@ -23,13 +25,16 @@ type ContextProps = {
   resetPlayers: () => void;
   setTalkTime: (arg: number) => void;
   setSelectedPlayer: (arg: number) => void;
+  setSelectedCategory: (arg: "up" | "down") => void;
 };
 
 export function useGameSetting() {
   const initialState = {
     player: [],
     talkTime: 3,
-    selectedPlayer: 0
+    selectedPlayer: 0,
+    selectedCategoryIndex: 0,
+    selectedCategoryName: wordCategory[0]
   };
   const [gameSetting, setGameSetting] = useState<GameSettingState>(
     initialState
@@ -108,7 +113,7 @@ export function useGameSetting() {
 
   // TODO: カテゴリー追加の場合はここをいじる
   const setWord = () => {
-    const wordPair = getRand(words.all);
+    const wordPair = getRand(words[gameSetting.selectedCategoryName]);
     const zeroOrOne = Math.floor(Math.random() * 2);
     const civilWord = wordPair[zeroOrOne];
     const wolfWord = wordPair[1 - zeroOrOne];
@@ -146,6 +151,25 @@ export function useGameSetting() {
       };
     });
 
+  const setSelectedCategory = (inst: "up" | "down") => {
+    if (inst !== "up" && inst !== "down") return;
+
+    const tmp = (inst: string, num: number) => {
+      if (inst === "up") return (num + 1) % wordCategory.length;
+      if (inst === "down") return (num - 1) % wordCategory.length;
+      return 0;
+    };
+
+    setGameSetting(prev => {
+      return {
+        ...prev,
+        selectedCategoryIndex: tmp(inst, prev.selectedCategoryIndex),
+        selectedCategoryName:
+          wordCategory[tmp(inst, prev.selectedCategoryIndex)]
+      };
+    });
+  };
+
   return {
     gameSetting,
     setPlayers,
@@ -153,7 +177,8 @@ export function useGameSetting() {
     setWord,
     setTalkTime,
     resetPlayers,
-    setSelectedPlayer
+    setSelectedPlayer,
+    setSelectedCategory
   } as const;
 }
 

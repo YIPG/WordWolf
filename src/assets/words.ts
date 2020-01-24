@@ -1,4 +1,4 @@
-const word_category: {
+const wordByCategory: {
   [category: string]: [string, string][];
 } = {
   love: [
@@ -292,10 +292,14 @@ const word_category: {
   ]
 };
 
-export const words = {
-  all: Object.values(word_category).reduce((pre, cur) => {
+export const words: {
+  [category: string]: [string, string][];
+} = {
+  all: Object.values(wordByCategory).reduce((pre, cur) => {
     pre.push(...cur);
     return pre;
   }, []),
-  ...word_category
+  ...wordByCategory
 };
+
+export const wordCategory = ["all", ...Object.keys(wordByCategory)];
