@@ -11,6 +11,5 @@ export const logPageView = (history: any) => {
     const page = location.pathname || window.location.pathname;
     ReactGA.set({ page: page });
     ReactGA.pageview(page);
-    console.log(`Page View logged for: ${page}`);
   });
 };

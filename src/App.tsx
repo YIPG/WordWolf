@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { logPageView } from "./GoogleAnalytics";
+import ReactGA from "react-ga";
 
 const App: React.FC = () => {
   let history = useHistory();
+  useEffect(() => {
+    const page = location.pathname || window.location.pathname;
+    ReactGA.set({ page: page });
+    ReactGA.pageview(page);
+  }, []);
   useEffect(() => {
     logPageView(history);
   }, [history]);
