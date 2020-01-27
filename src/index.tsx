@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import Root from "./Root";
 import * as serviceWorker from "./serviceWorker";
 import "./styles/tailwind.css";
-import { initializeGA } from "./GoogleAnalytics";
+import ReactGA from "react-ga";
 
-initializeGA();
+ReactGA.initialize("UA-157030300-1");
 
 document.body.style.backgroundColor = "#f7fafc";
 

@@ -1,18 +1,24 @@
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { logPageView } from "./GoogleAnalytics";
+import { useHistory, useLocation } from "react-router-dom";
 import ReactGA from "react-ga";
 
 const App: React.FC = () => {
   let history = useHistory();
+  let location = useLocation();
+
+  // Google Analytics
+  // 初回表示
   useEffect(() => {
-    const page = location.pathname || window.location.pathname;
+    const page = location.pathname;
     ReactGA.set({ page: page });
     ReactGA.pageview(page);
   }, []);
+
+  // 初回以降表示
   useEffect(() => {
-    logPageView(history);
-  }, [history]);
+    ReactGA.set({ page: location.pathname });
+    ReactGA.pageview(location.pathname);
+  }, [location]);
 
   return (
     <div className="w-screen h-screen bg-gray-100">
