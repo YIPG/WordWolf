@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { logPageView } from "./GoogleAnalytics";
 
 const App: React.FC = () => {
   let history = useHistory();
+  useEffect(() => {
+    logPageView(history);
+  }, [history]);
 
   return (
     <div className="w-screen h-screen bg-gray-100">
