@@ -154,18 +154,26 @@ export function useGameSetting() {
   const setSelectedCategory = (inst: "up" | "down") => {
     if (inst !== "up" && inst !== "down") return;
 
-    const tmp = (inst: string, num: number) => {
+    const getCategoryIndex = (inst: string, num: number) => {
       if (inst === "up") return (num + 1) % wordCategory.length;
-      if (inst === "down") return (num - 1) % wordCategory.length;
+
+      if (inst === "down") {
+        num <= 0 && (num += wordCategory.length);
+
+        return (num - 1) % wordCategory.length;
+      }
       return 0;
     };
 
     setGameSetting(prev => {
       return {
         ...prev,
-        selectedCategoryIndex: tmp(inst, prev.selectedCategoryIndex),
+        selectedCategoryIndex: getCategoryIndex(
+          inst,
+          prev.selectedCategoryIndex
+        ),
         selectedCategoryName:
-          wordCategory[tmp(inst, prev.selectedCategoryIndex)]
+          wordCategory[getCategoryIndex(inst, prev.selectedCategoryIndex)]
       };
     });
   };

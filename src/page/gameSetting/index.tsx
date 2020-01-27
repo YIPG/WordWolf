@@ -34,6 +34,7 @@ const GameSetting: React.FC = () => {
 
   const categoryTranslate = (category: string) => {
     if (category === "all") return "すべて";
+    if (category === "food") return "食べ物";
     if (category === "love") return "恋愛";
     if (category === "life") return "生活";
     if (category === "child") return "子供向け";
