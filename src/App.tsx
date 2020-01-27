@@ -16,9 +16,12 @@ const App: React.FC = () => {
 
   // 初回以降表示
   useEffect(() => {
-    ReactGA.set({ page: location.pathname });
-    ReactGA.pageview(location.pathname);
-  }, [location]);
+    history.listen(location => {
+      const page = location.pathname || window.location.pathname;
+      ReactGA.set({ page: page });
+      ReactGA.pageview(page);
+    });
+  }, [history]);
 
   return (
     <div className="w-screen h-screen bg-gray-100">
