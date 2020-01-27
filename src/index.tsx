@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import Root from "./Root";
 import * as serviceWorker from "./serviceWorker";
 import "./styles/tailwind.css";
+import { initializeGA } from "./GoogleAnalytics";
+
+initializeGA();
 
 document.body.style.backgroundColor = "#f7fafc";
 
