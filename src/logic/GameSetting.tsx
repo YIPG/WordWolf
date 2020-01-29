@@ -26,6 +26,7 @@ type ContextProps = {
   setTalkTime: (arg: number) => void;
   setSelectedPlayer: (arg: number) => void;
   setSelectedCategory: (arg: "up" | "down") => void;
+  setWordGM: (arg1: string, arg2: string) => void;
 };
 
 export function useGameSetting() {
@@ -135,6 +136,25 @@ export function useGameSetting() {
     });
   };
 
+  const setWordGM = (civilWord: string, wolfWord: string) => {
+    setGameSetting(prev => {
+      return {
+        ...prev,
+        player: prev.player.map(item =>
+          item.civil
+            ? {
+                ...item,
+                word: civilWord
+              }
+            : {
+                ...item,
+                word: wolfWord
+              }
+        )
+      };
+    });
+  };
+
   const setTalkTime = (time: number) =>
     setGameSetting(prev => {
       return {
@@ -186,7 +206,8 @@ export function useGameSetting() {
     setTalkTime,
     resetPlayers,
     setSelectedPlayer,
-    setSelectedCategory
+    setSelectedCategory,
+    setWordGM
   } as const;
 }
 

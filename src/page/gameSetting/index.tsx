@@ -14,7 +14,8 @@ const GameSetting: React.FC = () => {
     setWolf,
     setWord,
     resetPlayers,
-    setSelectedCategory
+    setSelectedCategory,
+    setWordGM
   } = useGameSettingCtx();
 
   useEffect(() => {
@@ -26,9 +27,19 @@ const GameSetting: React.FC = () => {
 
   const [wolfNum, setWolfNum] = useState(1);
 
+  const [civilWord, setCivilWord] = useState("");
+
+  const [wolfWord, setWolfWord] = useState("");
+
+  const [gmSetting, setGmSetting] = useState(false);
+
   const startGame = async () => {
     setWolf(wolfNum);
-    setWord();
+    if (gmSetting) {
+      setWordGM(civilWord, wolfWord);
+    } else {
+      setWord();
+    }
     history.push("/game/word");
   };
 
@@ -43,7 +54,7 @@ const GameSetting: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mb-24">
       <span className="text-4xl text-green-400 font-bold pt-24">
         ゲーム設定
       </span>
@@ -89,6 +100,35 @@ const GameSetting: React.FC = () => {
         <span className="text-5xl" onClick={() => setSelectedCategory("up")}>
           <FontAwesomeIcon icon={faCaretRight} />
         </span>
+      </div>
+      <div className="pt-4 pb-2 flex flex-col items-center">
+        <span
+          className={
+            " text-sm border rounded " +
+            (gmSetting
+              ? "border-green-400 font-normal py-1 px-2 shadow-inner"
+              : "border-gray-400 font-normal py-1 px-2 shadow")
+          }
+          onClick={() => setGmSetting(!gmSetting)}
+        >
+          自分でお題を設定する
+        </span>
+        {gmSetting && (
+          <>
+            <input
+              name="civil"
+              placeholder="市民のお題"
+              className="form mb-3 mt-6"
+              onChange={e => setCivilWord(e.target.value)}
+            />
+            <input
+              name="wolf"
+              placeholder="狼のお題"
+              className="form my-3"
+              onChange={e => setWolfWord(e.target.value)}
+            />
+          </>
+        )}
       </div>
       <span className=" text-lg font-semibold pt-6">トーク時間 (分)</span>
       <div className="flex flex-row justify-center items-center">
