@@ -104,7 +104,7 @@ const GameSetting: React.FC = () => {
       <div className="pt-4 pb-2 flex flex-col items-center">
         <span
           className={
-            " text-sm border rounded " +
+            " text-sm border bg-white rounded " +
             (gmSetting
               ? "border-green-400 font-normal py-1 px-2 shadow-inner"
               : "border-gray-400 font-normal py-1 px-2 shadow")
