@@ -54,7 +54,6 @@
     "@fullhuman/postcss-purgecss": "^2.0.3",
     "@types/react-ga": "^2.3.0",
     "source-map-explorer": "^2.2.2",
-    "tailwindcss": "^1.1.4",
-    "tailwindcss-transitions": "^2.1.0"
+    "tailwindcss": "^1.1.4"
   }
 }

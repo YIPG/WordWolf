@@ -23,6 +23,12 @@ button {
   @apply outline-none shadow-outline;
 }
 
+.alert-footer {
+  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 @tailwind components;
 
 @tailwind utilities;

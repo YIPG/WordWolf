@@ -10,6 +10,7 @@ type GameSettingState = {
   selectedPlayer: number;
   selectedCategoryIndex: number;
   selectedCategoryName: string;
+  showAlert: boolean;
   player: {
     name: string;
     word: string;
@@ -27,6 +28,7 @@ type ContextProps = {
   setSelectedPlayer: (arg: number) => void;
   setSelectedCategory: (arg: "up" | "down") => void;
   setWordGM: (arg1: string, arg2: string) => void;
+  setShowAlert: (arg: boolean) => void;
 };
 
 export function useGameSetting() {
@@ -35,6 +37,7 @@ export function useGameSetting() {
     talkTime: 3,
     selectedPlayer: 0,
     selectedCategoryIndex: 0,
+    showAlert: false,
     selectedCategoryName: wordCategory[0]
   };
   const [gameSetting, setGameSetting] = useState<GameSettingState>(
@@ -198,6 +201,15 @@ export function useGameSetting() {
     });
   };
 
+  const setShowAlert = (isShow: boolean) => {
+    setGameSetting(prev => {
+      return {
+        ...prev,
+        showAlert: isShow
+      };
+    });
+  };
+
   return {
     gameSetting,
     setPlayers,
@@ -207,7 +219,8 @@ export function useGameSetting() {
     resetPlayers,
     setSelectedPlayer,
     setSelectedCategory,
-    setWordGM
+    setWordGM,
+    setShowAlert
   } as const;
 }
 
