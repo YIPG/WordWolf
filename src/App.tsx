@@ -9,7 +9,6 @@ const App: React.FC = () => {
   // Google Analytics
   // 初回表示
   useEffect(() => {
-    console.log("tracking id is " + process.env.GA_TRACKING_ID);
     const page = location.pathname;
     ReactGA.set({ page: page });
     ReactGA.pageview(page);

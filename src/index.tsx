@@ -5,7 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import "./styles/tailwind.css";
 import ReactGA from "react-ga";
 
-ReactGA.initialize(process.env.GA_TRACKING_ID || "");
+ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID || "");
 
 document.body.style.backgroundColor = "#f7fafc";
 
