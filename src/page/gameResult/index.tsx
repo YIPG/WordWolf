@@ -1,14 +1,27 @@
-import React from "react";
-import { useGameSettingCtx } from "../../logic/GameSetting";
-import { useHistory } from "react-router-dom";
+import React from 'react';
+import { useGameSettingCtx } from '../../logic/GameSetting';
+import { useHistory } from 'react-router-dom';
+
+import { TwitterShareButton, LineShareButton } from 'react-share';
+const { TwitterIcon } = require('react-share');
 
 const GameResult = () => {
   const { gameSetting, setWord } = useGameSettingCtx();
   const history = useHistory();
   const handleNextGame = () => {
     setWord();
-    history.push("/game/word");
+    history.push('/game/word');
   };
+  const words =
+    gameSetting.player.length > 0
+      ? [
+          gameSetting.player.find((player) => player.civil)?.word,
+          gameSetting.player.find((player) => !player.civil)?.word,
+        ]
+      : ['', ''];
+
+  const wolfWin =
+    gameSetting.player.length > 0 && gameSetting.player[gameSetting.selectedPlayer].civil;
 
   return (
     <div className="flex flex-col items-center mb-32">
@@ -16,9 +29,7 @@ const GameResult = () => {
       {gameSetting.player.length > 0 && (
         <>
           <span className="pt-6 text-2xl">
-            {gameSetting.player[gameSetting.selectedPlayer].civil
-              ? "ウルフ(少数派)"
-              : "市民(多数派)"}
+            {wolfWin ? 'ウルフ(少数派)' : '市民(多数派)'}
             の勝ち！
           </span>
           <div className="flex flex-col w-3/4 my-10">
@@ -30,16 +41,14 @@ const GameResult = () => {
                 >
                   <span
                     className={
-                      "text-2xl font-light " +
-                      (player.civil ? "" : "text-pink-400 font-normal")
+                      'text-2xl font-light ' + (player.civil ? '' : 'text-pink-400 font-normal')
                     }
                   >
-                    {player.civil ? "市民" : "ウルフ"}: {player.name}
+                    {player.civil ? '市民' : 'ウルフ'}: {player.name}
                   </span>
                   <span
                     className={
-                      "text-2xl font-light " +
-                      (player.civil ? "" : "text-pink-400 font-normal")
+                      'text-2xl font-light ' + (player.civil ? '' : 'text-pink-400 font-normal')
                     }
                   >
                     {`「${player.word}」`}
@@ -50,10 +59,28 @@ const GameResult = () => {
           </div>
         </>
       )}
+      <LineShareButton
+        className=""
+        title="決定版ワードウルフ (ブラウザ版)"
+        url="https://word-wolf.net/"
+      >
+        <button className="btn btn-line">Lineでシェアする</button>
+      </LineShareButton>
+      <TwitterShareButton
+        className="mb-4"
+        title={`決定版ワードウルフ (ブラウザ版): 市民のワード「${words[0]}」、ウルフのワード「${
+          words[1]
+        }」でした。${wolfWin ? 'ウルフ' : '市民'}の勝ちです！`}
+        via="yuyaito_hoge"
+        hashtags={['ワードウルフ', 'ワード人狼']}
+        url="https://word-wolf.net/"
+      >
+        <button className="btn btn-twitter">Twitterでシェアする</button>
+      </TwitterShareButton>
       <button className="btn mt-2" onClick={handleNextGame}>
-        次のゲームへ
+        同じ設定で次のゲームへ
       </button>
-      <button className="btn" onClick={() => history.push("/setting/people")}>
+      <button className="btn" onClick={() => history.push('/setting/people')}>
         設定に戻る
       </button>
     </div>

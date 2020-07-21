@@ -15,6 +15,15 @@ button {
 .btn:hover {
   @apply bg-gray-100;
 }
+.btn-twitter {
+  border-color: #1da1f2;
+  color: #1da1f2;
+}
+
+.btn-line {
+  border-color: #00b900;
+  color: #00b900;
+}
 
 .form {
   @apply shadow appearance-none border rounded py-3 px-3 leading-tight;
@@ -24,8 +33,7 @@ button {
 }
 
 .alert-footer {
-  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
+  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
