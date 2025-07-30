@@ -25,8 +25,19 @@ yarn test
 yarn build:style
 ```
 
-## Modern Version Commands (in wordwolf-modern/)
+## Modern Version
 
+The modernized version has been moved to a separate repository: **[WordWolf-v2](https://github.com/YIPG/WordWolf-v2)**
+
+Key improvements in v2:
+- React 18.3 with Vite for 10x faster builds
+- Modern TypeScript 5.x
+- React Router v6
+- Tailwind CSS v3
+- Google Analytics 4
+- Modern PWA implementation
+
+Commands for v2:
 ```bash
 # Install dependencies
 npm install
