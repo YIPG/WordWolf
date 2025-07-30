@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  div,
+  span,
+  button {
+    @apply font-sans text-gray-700;
+  }
+
+  .btn {
+    @apply inline-block bg-white text-lg font-sans text-gray-800 m-5 font-medium px-4 py-2 border rounded shadow;
+  }
+  
+  .btn-green {
+    @apply border-green-400;
+  }
+  
+  .btn:hover {
+    @apply bg-gray-100;
+  }
+  
+  .btn-twitter {
+    border-color: #1da1f2;
+    color: #1da1f2;
+  }
+
+  .btn-line {
+    border-color: #00b900;
+    color: #00b900;
+  }
+
+  .form {
+    @apply shadow appearance-none border rounded py-3 px-3 leading-tight;
+  }
+  
+  .form:focus {
+    @apply outline-none ring-2 ring-blue-500;
+  }
+
+  .alert-footer {
+    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+}
